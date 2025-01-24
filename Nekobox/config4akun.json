@@ -122,7 +122,7 @@
                 "direct"
             ],
             "tag": "Internet Mix",
-            "type": "selector",
+            "type": "urltest",
             "url": "https://detectportal.firefox.com/success.txt",
             "interval": "1m0s" // untuk pindah otomatis 
         },
