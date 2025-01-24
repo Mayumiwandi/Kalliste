@@ -118,7 +118,8 @@
                 "AKUN SG 1",
                 "AKUN SG 2",
                 "AKUN JP 3",
-                "AKUN ID 4"
+                "AKUN ID 4",
+                "direct"
             ],
             "tag": "Internet Mix",
             "type": "selector"
