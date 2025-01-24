@@ -1,8 +1,9 @@
-// create by mayumi
+// Create BY MAYUMI
 {
     "log": {
         "disabled": false,
         "level": "info",
+        "output": "nekobox.log",
         "timestamp": true
     },
     "dns": {
@@ -37,7 +38,8 @@
             {
                 "disable_cache": false,
                 "domain": [
-                    "family.cloudflare-dns.com", // jangan ganti                 
+                    "family.cloudflare-dns.com", // jangan ganti
+                    "dns.google",
                     "quiz.int.vidio.com", // ganti sesuaikan dengan bug mu
                     "nontontv.vidio.com"
                 ],
@@ -52,6 +54,7 @@
             "inet6_range": "fc00::/18"
         }
     },
+    "ntp": {},
     "inbounds": [
         {
             "listen": "0.0.0.0",
@@ -94,7 +97,7 @@
                 "AKUN 4",
                 "direct"
             ],
-            "tag": "Yumi Internet",
+            "tag": "YUMI Internet",
             "type": "selector"
         },
         {
@@ -110,9 +113,17 @@
             "type": "urltest",
             "url": "https://detectportal.firefox.com/success.txt"
         },
-        
+        {
+            "outbounds": [
+                "AKUN SG 1",
+                "AKUN SG 2",
+                "AKUN JP 3",
+                "AKUN ID 4"
+            ],
+            "tag": "Internet Mix",
+            "type": "selector"
+        },
         // akun 1 ubah password/uid, server sesuaikan , path sama type sesuaikan.
-        
         {
             "domain_strategy": "ipv4_only",
             "multiplex": {
@@ -141,9 +152,7 @@
             },
             "type": "trojan"
         },
-        
-        // serah2
-        
+        // Akun 2
         {
             "tag": "AKUN 2",
             "type": "vless",
@@ -168,9 +177,7 @@
             },
             "domain_strategy": "ipv4_only"
         },
-        
         // akun 3
-        
         {
             "tag": "AKUN 3",
             "type": "vless",
@@ -195,9 +202,7 @@
             },
             "domain_strategy": "ipv4_only"
         },
-        
-        // akun 4
-        
+        // Akun 4
         {
             "tag": "AKUN 4",
             "type": "trojan",
@@ -214,6 +219,108 @@
                 "path": "/ID2",
                 "headers": {
                     "Host": "aio.serverless.us.kg"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "domain_strategy": "ipv4_only"
+        },
+        // AKUN ID 4
+        {
+            "tag": "AKUN ID 4",
+            "type": "vless",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "uuid": "a723f3bf-b76c-4ae7-8ea7-eff1871fed94",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "tls": {
+                "enabled": true,
+                "server_name": "tedjo.cepu.us.kg",
+                "insecure": true,
+                "disable_sni": false
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/45.60.186.91-443",
+                "headers": {
+                    "Host": "tedjo.cepu.us.kg"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "domain_strategy": "ipv4_only"
+        },
+        //AKUN JP 3
+        {
+            "tag": "AKUN JP 3",
+            "type": "vless",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "uuid": "a75f8e6d-5c14-46a6-b558-7dd206367803",
+            "flow": "",
+            "packet_encoding": "xudp",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/149.28.22.198-8443",
+                "headers": {
+                    "Host": "notx.stupx2.my.id"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "domain_strategy": "ipv4_only"
+        },
+        // AKUN SG 1
+        {
+            "tag": "AKUN SG 1",
+            "type": "trojan",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "password": "3448284c-7704-44d6-8825-06073c5c75ae",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/213.35.108.135-12596",
+                "headers": {
+                    "Host": "akungratis.pulsacell.workers.dev"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "domain_strategy": "ipv4_only"
+        },
+        //AKUN SG 2
+        {
+            "tag": "AKUN SG 2",
+            "type": "trojan",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "password": "49fb69ba-37d5-4c9a-8af2-7b598dc9f3c7",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/101.32.247.126-725",
+                "headers": {
+                    "Host": "sub.gpj.us.kg"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
