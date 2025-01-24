@@ -114,6 +114,7 @@
             "url": "https://detectportal.firefox.com/success.txt"
         },
         {
+            "interval": "1m0s", // untuk pindah otomatis 
             "outbounds": [
                 "AKUN SG 1",
                 "AKUN SG 2",
@@ -123,8 +124,7 @@
             ],
             "tag": "Internet Mix",
             "type": "urltest",
-            "url": "https://detectportal.firefox.com/success.txt",
-            "interval": "1m0s" // untuk pindah otomatis 
+            "url": "https://detectportal.firefox.com/success.txt"
         },
         // akun 1 ubah password/uid, server sesuaikan , path sama type sesuaikan.
         {
