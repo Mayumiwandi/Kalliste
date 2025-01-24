@@ -206,9 +206,9 @@
         {
             "tag": "AKUN 4",
             "type": "trojan",
-            "server": "quiz.int.vidio.com",
+            "server": "nontontv.vidio.com",
             "server_port": 80,
-            "password": "b9e52c13-c3a2-406a-bac8-dc2c3dd6e02e",
+            "password": "e5f3f94f-2608-4912-9c41-3386953c09cc",
             "multiplex": {
                 "enabled": false,
                 "protocol": "smux",
@@ -216,9 +216,9 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "/ID2",
+                "path": "/43.218.77.16-443",
                 "headers": {
-                    "Host": "aio.serverless.us.kg"
+                    "Host": "wilo.luckystup-id.xyz"
                 },
                 "max_early_data": 0,
                 "early_data_header_name": "Sec-WebSocket-Protocol"
