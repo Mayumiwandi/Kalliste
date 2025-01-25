@@ -286,26 +286,26 @@
         },
         // AKUN SG 1
         {
-            "tag": "AKUN SG 1",
-            "type": "trojan",
-            "server": "nontontv.vidio.com",
-            "server_port": 80,
-            "password": "3448284c-7704-44d6-8825-06073c5c75ae",
-            "multiplex": {
-                "enabled": false,
-                "protocol": "smux",
-                "max_streams": 32
-            },
-            "transport": {
-                "type": "ws",
-                "path": "/213.35.108.135-12596",
-                "headers": {
-                    "Host": "akungratis.pulsacell.workers.dev"
-                },
-                "max_early_data": 0,
-                "early_data_header_name": "Sec-WebSocket-Protocol"
-            },
-            "domain_strategy": "ipv4_only"
+      "tag": "AKUN SG 1",
+      "type": "trojan",
+      "server": "nontontv.vidio.com",
+      "server_port": 80,
+      "password": "87200f5e-e33c-428d-8ee0-b795c778de88",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/5.223.49.4-2053",
+        "headers": {
+          "Host": "multi.2359.us.kg"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
         },
         //AKUN SG 2
         {
