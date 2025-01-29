@@ -120,6 +120,9 @@
                 "AKUN SG 2",
                 "AKUN JP 3",
                 "AKUN ID 4",
+                "AKUN YUMI ID 1",
+                "AKUN YUMI ID 2",
+                "AKUN YUMI SG",
                 "direct"
             ],
             "tag": "Internet Mix",
@@ -286,26 +289,26 @@
         },
         // AKUN SG 1
         {
-      "tag": "AKUN SG 1",
-      "type": "trojan",
-      "server": "nontontv.vidio.com",
-      "server_port": 80,
-      "password": "87200f5e-e33c-428d-8ee0-b795c778de88",
-      "multiplex": {
-        "enabled": false,
-        "protocol": "smux",
-        "max_streams": 32
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/5.223.49.4-2053",
-        "headers": {
-          "Host": "multi.2359.us.kg"
-        },
-        "max_early_data": 0,
-        "early_data_header_name": "Sec-WebSocket-Protocol"
-      },
-      "domain_strategy": "ipv4_only"
+            "tag": "AKUN SG 1",
+            "type": "trojan",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "password": "87200f5e-e33c-428d-8ee0-b795c778de88",
+            "multiplex": {
+                "enabled": false,
+                "protocol": "smux",
+                "max_streams": 32
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/5.223.49.4-2053",
+                "headers": {
+                    "Host": "multi.2359.us.kg"
+                },
+                "max_early_data": 0,
+                "early_data_header_name": "Sec-WebSocket-Protocol"
+            },
+            "domain_strategy": "ipv4_only"
         },
         //AKUN SG 2
         {
@@ -329,6 +332,73 @@
                 "early_data_header_name": "Sec-WebSocket-Protocol"
             },
             "domain_strategy": "ipv4_only"
+        },
+        //AKUN YUMI ID 
+        //AKUN DI BAWAH INI CONVERD DARI WEB https://sublink-worker.sageer.me/
+        {
+            "type": "trojan",
+            "tag": "AKUN YUMI ID 1",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "f1a57ddc-d09b-4f7d-b557-3a8b17c20feb",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "zetaa-kawai.yumicftigarun.web.id",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/ID13",
+                "headers": {
+                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                }
+            }
+        },
+        // AKUN YUMI ID 2
+        {
+            "type": "trojan",
+            "tag": "AKUN YUMI ID 2",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "password": "71beefcb-e544-4126-93a6-e3c3529f64e6",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": false
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/ID13",
+                "headers": {
+                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                }
+            }
+        },
+        // AKUN YUMI SG
+        {
+            "type": "trojan",
+            "tag": "AKUN YUMI SG",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "password": "2b59a4ba-de49-48a3-a04c-3e9842b2bf8b",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": false
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/SG1",
+                "headers": {
+                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                }
+            }
         },
         {
             "tag": "direct",
