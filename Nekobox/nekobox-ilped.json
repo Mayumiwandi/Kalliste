@@ -1,0 +1,482 @@
+{
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "output": "nekobox.log",
+    "timestamp": true
+  },
+  "dns": {
+    "servers": [
+      {
+        "address": "https://family.cloudflare-dns.com/dns-query",
+        "address_resolver": "direct-dns",
+        "strategy": "ipv4_only",
+        "tag": "remote-dns"
+      },
+      {
+        "address": "local",
+        "strategy": "ipv4_only",
+        "tag": "direct-dns"
+      },
+      {
+        "address": "local",
+        "address_resolver": "dns-local",
+        "strategy": "ipv4_only",
+        "tag": "dns-final"
+      },
+      {
+        "address": "local",
+        "tag": "dns-local"
+      },
+      {
+        "address": "rcode://success",
+        "tag": "dns-block"
+      }
+    ],
+    "rules": [
+      {
+        "disable_cache": false,
+        "domain": [
+          "family.cloudflare-dns.com",
+          "dns.google",
+          "104.26.7.171",
+          "nontontv.vidio.com",
+          "quiz.int.vidio.com"
+        ],
+        "server": "direct-dns"
+      }
+    ],
+    "final": "dns-final",
+    "independent_cache": true,
+    "fakeip": {
+      "enabled": true,
+      "inet4_range": "198.18.0.0/15",
+      "inet6_range": "fc00::/18"
+    }
+  },
+  "ntp": {},
+  "inbounds": [
+    {
+      "listen": "0.0.0.0",
+      "listen_port": 6450,
+      "override_address": "8.8.8.8",
+      "override_port": 53,
+      "tag": "dns-in",
+      "type": "direct"
+    },
+    {
+      "domain_strategy": "",
+      "endpoint_independent_nat": true,
+      "inet4_address": [
+        "172.19.0.1/28"
+      ],
+      "mtu": 9000,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "stack": "system",
+      "tag": "tun-in",
+      "type": "tun"
+    },
+    {
+      "domain_strategy": "",
+      "listen": "0.0.0.0",
+      "listen_port": 2080,
+      "sniff": true,
+      "sniff_override_destination": true,
+      "tag": "mixed-in",
+      "type": "mixed"
+    }
+  ],
+  "outbounds": [
+    {
+      "outbounds": [
+        "Best Latency",
+        "AKUN 1",
+        "AKUN 2",
+        "AKUN 3",
+        "AKUN 4",
+        "direct"
+      ],
+      "tag": "YUMI Internet",
+      "type": "selector"
+    },
+    {
+      "interval": "1m0s",
+      "outbounds": [
+        "AKUN 1",
+        "AKUN 2",
+        "AKUN 3",
+        "AKUN 4",
+        "direct"
+      ],
+      "tag": "Best Latency",
+      "type": "urltest",
+      "url": "https://detectportal.firefox.com/success.txt"
+    },
+    {
+      "interval": "1m0s",
+      "outbounds": [
+        "AKUN SG 1",
+        "AKUN SG 2",
+        "AKUN JP 3",
+        "AKUN ID 4",
+        "AKUN YUMI ID 1",
+        "AKUN YUMI ID 2",
+        "AKUN YUMI SG",
+        "direct"
+      ],
+      "tag": "Internet Mix",
+      "type": "urltest",
+      "url": "https://detectportal.firefox.com/success.txt"
+    },
+    {
+      "domain_strategy": "ipv4_only",
+      "multiplex": {
+        "enabled": false,
+        "max_streams": 32,
+        "protocol": "smux"
+      },
+      "password": "89906e3f-f83d-406c-8eea-b78e98171084",
+      "server": "104.26.7.171",
+      "server_port": 443,
+      "tag": "AKUN 1",
+      "tls": {
+        "disable_sni": false,
+        "enabled": true,
+        "insecure": true,
+        "server_name": "aio.narakatiket.workers.dev"
+      },
+      "transport": {
+        "early_data_header_name": "Sec-WebSocket-Protocol",
+        "headers": {
+          "Host": "aio.narakatiket.workers.dev"
+        },
+        "max_early_data": 0,
+        "path": "/158.178.225.124=37497",
+        "type": "ws"
+      },
+      "type": "trojan"
+    },
+    {
+      "tag": "AKUN 2",
+      "type": "vless",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "uuid": "da18c47b-b3af-42df-bea6-3e3f39339ea0",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/192.236.193.108:443",
+        "headers": {
+          "Host": "cfwaio.proxybox.us.kg"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN 3",
+      "type": "vless",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "uuid": "ae3d2aca-11b4-49c6-8e37-9325dc971df5",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/103.133.223.52-2096",
+        "headers": {
+          "Host": "nautica.foolvpn.me"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN 4",
+      "type": "trojan",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "password": "e5f3f94f-2608-4912-9c41-3386953c09cc",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/43.218.77.16-443",
+        "headers": {
+          "Host": "wilo.luckystup-id.xyz"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN ID 4",
+      "type": "vless",
+      "server": "104.26.7.171",
+      "server_port": 443,
+      "uuid": "a723f3bf-b76c-4ae7-8ea7-eff1871fed94",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "tls": {
+        "enabled": true,
+        "server_name": "tedjo.cepu.us.kg",
+        "insecure": true,
+        "disable_sni": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/45.60.186.91-443",
+        "headers": {
+          "Host": "tedjo.cepu.us.kg"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN JP 3",
+      "type": "vless",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "uuid": "a75f8e6d-5c14-46a6-b558-7dd206367803",
+      "flow": "",
+      "packet_encoding": "xudp",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/149.28.22.198-8443",
+        "headers": {
+          "Host": "notx.stupx2.my.id"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN SG 1",
+      "type": "trojan",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "password": "87200f5e-e33c-428d-8ee0-b795c778de88",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/5.223.49.4-2053",
+        "headers": {
+          "Host": "multi.2359.us.kg"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "tag": "AKUN SG 2",
+      "type": "trojan",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "password": "49fb69ba-37d5-4c9a-8af2-7b598dc9f3c7",
+      "multiplex": {
+        "enabled": false,
+        "protocol": "smux",
+        "max_streams": 32
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/101.32.247.126-725",
+        "headers": {
+          "Host": "sub.gpj.us.kg"
+        },
+        "max_early_data": 0,
+        "early_data_header_name": "Sec-WebSocket-Protocol"
+      },
+      "domain_strategy": "ipv4_only"
+    },
+    {
+      "type": "trojan",
+      "tag": "AKUN YUMI ID 1",
+      "server": "104.26.7.171",
+      "server_port": 443,
+      "password": "f1a57ddc-d09b-4f7d-b557-3a8b17c20feb",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "zetaa-kawai.yumicftigarun.web.id",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ID13",
+        "headers": {
+          "host": "zetaa-kawai.yumicftigarun.web.id"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "AKUN YUMI ID 2",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "password": "71beefcb-e544-4126-93a6-e3c3529f64e6",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/ID13",
+        "headers": {
+          "host": "zetaa-kawai.yumicftigarun.web.id"
+        }
+      }
+    },
+    {
+      "type": "trojan",
+      "tag": "AKUN YUMI SG",
+      "server": "104.26.7.171",
+      "server_port": 80,
+      "password": "2b59a4ba-de49-48a3-a04c-3e9842b2bf8b",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": false
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/SG1",
+        "headers": {
+          "host": "zetaa-kawai.yumicftigarun.web.id"
+        }
+      }
+    },
+    {
+      "tag": "direct",
+      "type": "direct"
+    },
+    {
+      "tag": "bypass",
+      "type": "direct"
+    },
+    {
+      "tag": "block",
+      "type": "block"
+    },
+    {
+      "tag": "dns-out",
+      "type": "dns"
+    }
+  ],
+  "route": {
+    "auto_detect_interface": true,
+    "rules": [
+      {
+        "outbound": "dns-out",
+        "port": [
+          53
+        ]
+      },
+      {
+        "inbound": [
+          "dns-in"
+        ],
+        "outbound": "dns-out"
+      },
+      {
+        "network": [
+          "udp"
+        ],
+        "geosite": [
+          "youtube",
+          "telegram",
+          "facebook",
+          "instagram",
+          "google",
+          "ubuntu"
+        ],
+        "outbound": "block",
+        "port": [
+          443
+        ],
+        "port_range": []
+      },
+      {
+        "port": [
+          3478,
+          4244,
+          5222,
+          5223,
+          5242,
+          45395,
+          50318,
+          59234
+        ],
+        "geoip": [
+          "facebook"
+        ],
+        "outbound": "bypass"
+      },
+      {
+        "ip_cidr": [
+          "224.0.0.0/3",
+          "ff00::/8"
+        ],
+        "outbound": "block",
+        "source_ip_cidr": [
+          "224.0.0.0/3",
+          "ff00::/8"
+        ]
+      }
+    ]
+  },
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "../cache/clash.db",
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_controller": "127.0.0.1:9090",
+      "external_ui": "../files/yacd",
+      "external_ui_download_url": "https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip"
+    }
+  }
+}
