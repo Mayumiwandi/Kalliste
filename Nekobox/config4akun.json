@@ -41,7 +41,8 @@
                     "family.cloudflare-dns.com", // jangan ganti
                     "dns.google",
                     "quiz.int.vidio.com", // ganti sesuaikan dengan bug mu
-                    "nontontv.vidio.com"
+                    "nontontv.vidio.com",
+                    "idx.google.com"
                 ],
                 "server": "direct-dns"
             }
