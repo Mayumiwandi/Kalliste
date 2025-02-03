@@ -96,7 +96,7 @@
                 "Best Latency",
                 "AKUN US 1",
                 "AKUN US 2 Nautica",
-                "AKUN MY ",
+                "AKUN MY Zeta",
                 "AKUN TH",
                 "direct"
             ],
@@ -179,10 +179,10 @@
                 }
             }
         },
-        // AKUN MY
+        // AKUN MY Zeta
         {
       "type": "trojan",
-      "tag": "AKUN MY",
+      "tag": "AKUN MY Zeta",
       "server": "nontontv.vidio.com",
       "server_port": 443,
       "password": "f53ce22f-5891-4dd6-9613-bc3df66e90fc",
