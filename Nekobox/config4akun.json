@@ -181,15 +181,30 @@
         },
         // AKUN MY
         {
-            "tag": "AKUN MY",
-            "type": "shadowsocks",
-            "server": "nontontv.vidio.com",
-            "server_port": 80,
-            "method": "none",
-            "password": "e58081ac-5b70-4c4f-90f0-a44d73a8f8ee�p",
-            "network": "tcp",
-            "tcp_fast_open": false
-        },
+      "type": "trojan",
+      "tag": "AKUN MY",
+      "server": "nontontv.vidio.com",
+      "server_port": 443,
+      "password": "f53ce22f-5891-4dd6-9613-bc3df66e90fc",
+      "network": "tcp",
+      "tcp_fast_open": false,
+      "tls": {
+        "enabled": true,
+        "server_name": "zetaa-kawai.yumicftigarun.web.id",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/MY1",
+        "headers": {
+          "host": "zetaa-kawai.yumicftigarun.web.id"
+        }
+      }
+    },
         //AKUN TH
         {
             "type": "trojan",
