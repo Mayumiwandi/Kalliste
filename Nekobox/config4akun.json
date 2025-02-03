@@ -96,8 +96,10 @@
                 "Best Latency",
                 "AKUN US 1",
                 "AKUN US 2 Nautica",
-                "AKUN MY Zeta",
-                "AKUN TH",
+                "AKUN Zeta",
+                "AKUN MY Jrflasher",
+                "AKUN US 3",
+                "AKUN US 4",
                 "direct"
             ],
             "tag": "YUMI Internet",
@@ -106,11 +108,13 @@
         {
             "interval": "1m0s", // untuk pindah otomatis 
             "outbounds": [
-                "AKUN 1",
+                "AKUN Narakatiket",
                 "AKUN 2",
                 "AKUN 3",
                 "AKUN 4",
-                "AKUN 5 SG",
+                "AKUN EN Nuclear",
+                "AKUN EN Nautica",
+                "AKUN Canada nautica",
                 "direct"
             ],
             "tag": "Best Latency",
@@ -133,6 +137,7 @@
             "type": "urltest",
             "url": "https://detectportal.firefox.com/success.txt"
         },
+        // SELECTOR YUMI
         // AKUN US 1
         {
             "type": "vless",
@@ -179,44 +184,18 @@
                 }
             }
         },
-        // AKUN MY Zeta
-        {
-      "type": "trojan",
-      "tag": "AKUN MY Zeta",
-      "server": "nontontv.vidio.com",
-      "server_port": 443,
-      "password": "f53ce22f-5891-4dd6-9613-bc3df66e90fc",
-      "network": "tcp",
-      "tcp_fast_open": false,
-      "tls": {
-        "enabled": true,
-        "server_name": "zetaa-kawai.yumicftigarun.web.id",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/MY1",
-        "headers": {
-          "host": "zetaa-kawai.yumicftigarun.web.id"
-        }
-      }
-    },
-        //AKUN TH
+        // AKUN Zeta
         {
             "type": "trojan",
-            "tag": "AKUN TH",
+            "tag": "AKUN Zeta",
             "server": "nontontv.vidio.com",
             "server_port": 443,
-            "password": "0cb68608-5547-4f81-841f-652e5165c230",
+            "password": "a0ea392f-7b33-49f0-a34a-b36a349fc41c",
             "network": "tcp",
             "tcp_fast_open": false,
             "tls": {
                 "enabled": true,
-                "server_name": "zetaa-kawai.yumicftigarun.web.id",
+                "server_name": "cfwaio.proxybox.us.kg",
                 "insecure": false,
                 "utls": {
                     "enabled": true,
@@ -225,12 +204,85 @@
             },
             "transport": {
                 "type": "ws",
-                "path": "/TH12",
+                "path": "/192.236.193.108:443",
                 "headers": {
-                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                    "host": "cfwaio.proxybox.us.kg"
                 }
             }
         },
+        //AKUN MY Jrflasher
+        {
+            "type": "trojan",
+            "tag": "AKUN MY Jrflasher",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "89e70cd9-e5d2-4236-9157-2fbb73f71de4",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "jrflasher.jrmpv.biz.id",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/45.195.76.190:29690",
+                "headers": {
+                    "host": "jrflasher.jrmpv.biz.id"
+                }
+            }
+        },
+        //AKUN US 3
+        {
+            "type": "vless",
+            "tag": "AKUN US 3",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "uuid": "4094668e-c1fb-4cf9-ab01-3d7c6dfde910",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": false
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/206.201.196.122=443",
+                "headers": {
+                    "host": "vip.inconigto.us.kg"
+                }
+            },
+            "network": "tcp"
+        },
+        //AKUN US 4
+        {
+            "type": "vless",
+            "tag": "AKUN US 4",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "uuid": "6b0f18c3-3cc8-44be-b048-f6b7f8c80231",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "vip.inconigto.us.kg",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/37.1.203.192=443",
+                "headers": {
+                    "host": "vip.inconigto.us.kg"
+                }
+            },
+            "network": "tcp"
+        },
+        //SELECTOR Bets Latency
         // akun 1 ubah password/uid, server sesuaikan , path sama type sesuaikan.
         {
             "domain_strategy": "ipv4_only",
@@ -242,7 +294,7 @@
             "password": "89906e3f-f83d-406c-8eea-b78e98171084",
             "server": "quiz.int.vidio.com",
             "server_port": 443,
-            "tag": "AKUN 1",
+            "tag": "AKUN Narakatiket",
             "tls": {
                 "disable_sni": false,
                 "enabled": true,
@@ -333,26 +385,79 @@
             },
             "domain_strategy": "ipv4_only"
         },
-        // AKUN 5 SG
+        // AKUN EN Nuclear
         {
             "type": "trojan",
-            "tag": "AKUN 5 SG",
+            "tag": "AKUN EN Nuclear",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "b74386c8-5909-4f52-9af6-a4429c2627aa",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "nuclear.us.kg",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/185.101.96.238:15945",
+                "headers": {
+                    "host": "nuclear.us.kg"
+                }
+            }
+        },
+        //AKUN EN nautica
+        {
+            "type": "trojan",
+            "tag": "AKUN EN Nautica",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "9cfa1dd1-1859-4a94-bada-e074e01d67b5",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "nautica.foolvpn.me",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/125.7.24.251-443",
+                "headers": {
+                    "host": "nautica.foolvpn.me"
+                }
+            }
+        },
+        // AKUN Canada nautica
+        {
+            "type": "vless",
+            "tag": "AKUN Canada nautica",
             "server": "nontontv.vidio.com",
             "server_port": 80,
-            "password": "651de705-693a-4c07-8868-edb989f88901",
-            "network": "tcp",
+            "uuid": "9624bfe2-625e-4ed9-a05f-839dde8094b3",
             "tcp_fast_open": false,
             "tls": {
                 "enabled": false
             },
             "transport": {
                 "type": "ws",
-                "path": "/SG26",
+                "path": "/51.161.134.202-8443",
                 "headers": {
-                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                    "host": "nautica.foolvpn.me"
                 }
-            }
+            },
+            "network": "tcp"
         },
+        // SELECTOR INTERNET MIX
         // AKUN ID Herza
         {
             "type": "vless",
@@ -450,46 +555,58 @@
             },
             "domain_strategy": "ipv4_only"
         },
-        //AKUN YUMI ID 
+        //AKUN YUMI ID 1
         //AKUN DI BAWAH INI CONVERD DARI WEB https://sublink-worker.sageer.me/
         {
-            "type": "vless",
+            "type": "trojan",
             "tag": "AKUN YUMI ID 1",
             "server": "nontontv.vidio.com",
-            "server_port": 80,
-            "uuid": "358d0c84-6424-4938-8c99-22ae92755f58",
-            "tcp_fast_open": false,
-            "tls": {
-                "enabled": false
-            },
-            "transport": {
-                "type": "ws",
-                "path": "/ID7",
-                "headers": {
-                    "host": "zetaa-kawai.yumicftigarun.web.id"
-                }
-            },
-            "network": "tcp"
-        },
-        // AKUN YUMI ID 2
-        {
-            "type": "trojan",
-            "tag": "AKUN YUMI ID 2",
-            "server": "nontontv.vidio.com",
-            "server_port": 80,
-            "password": "74c7f8dc-d322-441a-997d-4c198a6cf064",
+            "server_port": 443,
+            "password": "1bb7b3bf-a345-42c3-8304-492d6fc34cca",
             "network": "tcp",
             "tcp_fast_open": false,
             "tls": {
-                "enabled": false
+                "enabled": true,
+                "server_name": "xvp.bmkg.xyz.lucky.cepu.us.kg",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
             },
             "transport": {
                 "type": "ws",
-                "path": "/ID8",
+                "path": "/172.232.239.147-587",
                 "headers": {
-                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                    "host": "xvp.bmkg.xyz.lucky.cepu.us.kg"
                 }
             }
+        },
+        // AKUN YUMI ID 2
+        {
+            "type": "vless",
+            "tag": "AKUN ID YUMI 2",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "uuid": "622a5d20-2896-412d-b006-3292e4af0a43",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "lucky.cepu.us.kg",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/43.218.77.16-1443",
+                "headers": {
+                    "host": "lucky.cepu.us.kg"
+                }
+            },
+            "network": "tcp"
         },
         // AKUN YUMI SG
         {
