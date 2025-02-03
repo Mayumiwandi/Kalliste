@@ -94,10 +94,10 @@
         {
             "outbounds": [
                 "Best Latency",
-                "AKUN 1",
-                "AKUN 2",
-                "AKUN 3",
-                "AKUN 4",
+                "AKUN US 1",
+                "AKUN US 2 Nautiac",
+                "AKUN MY ",
+                "AKUN TH",
                 "direct"
             ],
             "tag": "YUMI Internet",
@@ -132,6 +132,89 @@
             "tag": "Internet Mix", //NAMA SELECTOR
             "type": "urltest",
             "url": "https://detectportal.firefox.com/success.txt"
+        },
+        // AKUN US 1
+        {
+            "type": "vless",
+            "tag": "AKUN US 1",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "uuid": "fe43488c-81e8-4024-853a-e1dc6e976a3b",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": false
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/US30",
+                "headers": {
+                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                }
+            },
+            "network": "tcp"
+        },
+        // AKUN US 2 Nautica
+        {
+            "type": "trojan",
+            "tag": "AKUN US 2 Nautica",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "60cca507-6344-47c9-8823-cebdb0a333e7",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "nautica.foolvpn.me",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/85.209.154.36-443",
+                "headers": {
+                    "host": "nautica.foolvpn.me"
+                }
+            }
+        },
+        // AKUN MY
+        {
+            "tag": "AKUN MY",
+            "type": "shadowsocks",
+            "server": "nontontv.vidio.com",
+            "server_port": 80,
+            "method": "none",
+            "password": "e58081ac-5b70-4c4f-90f0-a44d73a8f8ee�p",
+            "network": "tcp",
+            "tcp_fast_open": false
+        },
+        //AKUN TH
+        {
+            "type": "trojan",
+            "tag": "AKUN TH",
+            "server": "nontontv.vidio.com",
+            "server_port": 443,
+            "password": "0cb68608-5547-4f81-841f-652e5165c230",
+            "network": "tcp",
+            "tcp_fast_open": false,
+            "tls": {
+                "enabled": true,
+                "server_name": "zetaa-kawai.yumicftigarun.web.id",
+                "insecure": false,
+                "utls": {
+                    "enabled": true,
+                    "fingerprint": "chrome"
+                }
+            },
+            "transport": {
+                "type": "ws",
+                "path": "/TH12",
+                "headers": {
+                    "host": "zetaa-kawai.yumicftigarun.web.id"
+                }
+            }
         },
         // akun 1 ubah password/uid, server sesuaikan , path sama type sesuaikan.
         {
