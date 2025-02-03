@@ -129,7 +129,7 @@
                 "AKUN JP 3",
                 "AKUN ID Herza",
                 "AKUN YUMI ID 1",
-                "AKUN YUMI ID 2",
+                "AKUN ID 2 Lucky",
                 "AKUN YUMI SG",
                 "direct"
             ],
@@ -582,10 +582,10 @@
                 }
             }
         },
-        // AKUN YUMI ID 2
+        // AKUN ID 2 Lucky
         {
             "type": "vless",
-            "tag": "AKUN YUMI ID 2",
+            "tag": "AKUN ID 2 Lucky",
             "server": "nontontv.vidio.com",
             "server_port": 443,
             "uuid": "622a5d20-2896-412d-b006-3292e4af0a43",
