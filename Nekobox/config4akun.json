@@ -9,7 +9,7 @@
     "dns": {
         "servers": [
             {
-                "address": "https://family.cloudflare-dns.com/dns-query",
+                "address": "https://dns.retakecs.com/dns-query",
                 "address_resolver": "direct-dns",
                 "strategy": "ipv4_only",
                 "tag": "remote-dns"
@@ -103,7 +103,8 @@
                 "direct"
             ],
             "tag": "YUMI Internet",
-            "type": "selector"
+            "type": "urltest",
+            "url": "http://connectivitycheck.gstatic.com/generate_204" // punya google
         },
         {
             "interval": "1m0s", // untuk pindah otomatis 
