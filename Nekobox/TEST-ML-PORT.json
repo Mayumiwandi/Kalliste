@@ -162,8 +162,7 @@
             ],
             "interrupt_exist_connections": true,
             "tag": "ML-ID",
-            "type": "urltest",
-            "url": "http://connectivitycheck.gstatic.com/generate_204" // punya google
+            "type": "selector"
         },
         {
             "tag": "direct",
